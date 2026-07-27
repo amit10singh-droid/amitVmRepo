@@ -1,35 +1,35 @@
 rgs = {
   rg1 = {
-    name     = "dev-rg"
+    name     = "prod-rg"
     location = "eastus"
   }  
 }
 
 vnet = {
   vent1 = {
-    name = "dev-vnet"
-    resource_group_name  = "dev-rg"
+    name = "prod-vnet"
+    resource_group_name  = "prod-rg"
     location             = "uaenorth"
     address_space        = ["10.0.0.0/16"]
   }
   vent2 = {
     name = "prod-vnet"
-    resource_group_name  = "dev-rg"
+    resource_group_name  = "prod-rg"
     location             = "centralindia"
     address_space        = ["20.0.0.0/16"]
   }
 }
 subnets = {
   sn1 = {
-    name                 = "dev-subnet"
-    virtual_network_name = "dev-vnet"
-    resource_group_name  = "dev-rg"
+    name                 = "prod-subnet"
+    virtual_network_name = "prod-vnet"
+    resource_group_name  = "prod-rg"
     address_prefixes     = ["10.0.1.0/24"]
   }
   Sn2 = {
-    name                 = "dev-subnet"
-    virtual_network_name = "dev-vnet"
-    resource_group_name  = "dev-rg"
+    name                 = "prod-subnet"
+    virtual_network_name = "prod-vnet"
+    resource_group_name  = "prod-rg"
     address_prefixes     = ["20.0.1.0/24"]
   }
 }

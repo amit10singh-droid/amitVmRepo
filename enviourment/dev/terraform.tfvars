@@ -44,8 +44,9 @@ pip = {
   }
   pip2 = {
 
-    name                = "prod-ip"
-    resource_group_name = "prod-rg"
+    resource_group_name  = "dev-rg"
+    name                = "dev-ip"
+    resource_group_name = "dev-rg"
     location            = "centralindia"
     allocation_method   = "Static"
   }
@@ -58,8 +59,9 @@ vms = {
     resource_group_name = "dev-rg"
     location            = "uaenorth"
     size                = "Standard_D2s_v3"
-    admin_username      = "test123"
-    admin_password      = "Password@123"
+    # admin_username      = "test123"
+    # admin_password      = "Password@123"
+    key_vault_key            = "kv1"
     nic_name            = "dev-nic"
     pip_name            = "dev-ip"
     address_allocation  = "Dynamic"
@@ -68,17 +70,37 @@ vms = {
   }
 
   vm2 = {
-    vm_name             = "prod-vm"
-    resource_group_name = "prod-rg"
+    vm_name             = "dev-vm"
+    resource_group_name = "dev-rg"
     location            = "centralindia"
     size                = "Standard_D2s_v3"
-    admin_username      = "test123"
-    admin_password      = "Password@123"
-    nic_name            = "prod-nic"
-    pip_name            = "prod-ip"
+    # admin_username      = "test123"
+    # admin_password      = "Password@123"   
+    key_vault_key           = "kv1"  
+    nic_name            = "dev-nic"
+    pip_name            = "dev-ip"
     address_allocation  = "Dynamic"
-    subnet_name         = "prod-subnet"
-    venet_name          = "prod-vnet"
+    subnet_name         = "dev-subnet"
+    venet_name          = "dev-vnet"
+    
   }
 }
 
+
+keyvalut = {
+  kv1 = {
+    name                       = "amal-kv"
+    location                   = "centralindia"
+    resource_group_name        = "prod-rg"
+    # tenant_id                  = "b4e113af-6735-4b69-af7d-2bc29e2c915f"
+    sku_name                   = "standard"
+    purge_protection_enabled   = false
+    soft_delete_retention_days = 7
+
+    enable_rbac_authorization = true
+    # value                     = "test123"
+    # password                  = "Password@123"
+    admin_username = "test123"
+
+  }
+}

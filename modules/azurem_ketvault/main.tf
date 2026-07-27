@@ -1,6 +1,7 @@
 
+data "azurerm_client_config" "current" {}
 resource "azurerm_key_vault" "vault" {
-for_each = var.keyvault
+for_each = var.keyvalut
   name                        =each.value.name
   location                    = each.value.location
   resource_group_name         = each.value.resource_group_name

@@ -18,8 +18,9 @@ module "publicip" {
   source = "../../modules/azurerm_publicids"
   public_ips = var.pip
 }
-module "virtual_machine" {
- depends_on = [ module.resource_group, azurerm_public_ip ]
+module "virtual_machine" { 
  source = "../../modules/azurem_vm"
+depends_on = [module.resource_group, module.publicip]
  vms = var.vms
+ keyvalut = var.keyvalut 
 }

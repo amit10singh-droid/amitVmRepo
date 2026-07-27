@@ -15,3 +15,7 @@ variable "vms" {
 variable "pip" {
   
 }
+variable "keyvalut" {
+  
+}
+
